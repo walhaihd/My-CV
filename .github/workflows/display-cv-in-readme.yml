@@ -24,4 +24,4 @@ jobs:
 
     - name: Generate pdfs 
       run: |
-        cat "${{ github.action_path }}/$RESUME_FILE"
+        cat "${{ github.workspace }}/$RESUME_FILE"
