@@ -11,17 +11,24 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: actions/checkout@v4
 
     - name: Install dependencies
       run: |
             sudo apt-get update -y \
-
             # Install the full version of pdflatex and Pdftoppm 
             sudo apt-get install texlive-full poppler-utils -y 
 
-    - name: Generate pdfs 
+    - name: Generate resume
       run: |
-        cat "${{ github.workspace }}/$RESUME_FILE"
+        pdflatex "${{ github.workspace }}/$RESUME_FILE" -output-format="pdf" -output-directory="${{ github.workspace }}"
+
+    - name: Commit and push resume
+      run: |
+            git config --global user.name 'GitHub Actions'
+            git config --global user.email 'actions@github.com'
+            git add *.pdf
+            git commit -m "Update generated resume" || echo "No changes to commit"
+            git push
