@@ -1,0 +1,124 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage[none]{hyphenat}
+\setlength{\footskip}{3.60004pt}
+
+\pagestyle{fancy}
+\fancyhf{} % Clear header/footer
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\definecolor{darkblue}{rgb}{0.1, 0.1, 0.5}
+
+\titleformat{\section}{\color{darkblue}\normalfont\large\bfseries\uppercase}{\thesection}{1em}{}
+\titlespacing{\section}{0pt}{1.2em}{0.6em}
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\sloppy
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \textbf{Viet Hai Nguyen}}\\[2pt]
+    Eindhoven, The Netherlands \quad
+    \faEnvelope~\href{mailto:viet.hai.nguyen@outlook.com}{viet.hai.nguyen@outlook.com} \quad
+    \faPhone~+31 6 87777880 \\[2pt]
+    \faGithub~\href{https://github.com/walhaihd}{github.com/walhaihd} \quad
+    \faLinkedin~\href{https://linkedin.com/in/viet-hai-nguyen}{linkedin.com/in/viet-hai-nguyen}
+\end{center}
+
+%-----------PROFILE-----------
+\section*{Profile}
+Versatile software engineer with practical experience in building robust, user-friendly applications. Strong background in C\# and .NET, with a focus on clean code, automation, and real-world problem solving. Quick to learn, proactive in teams, and committed to delivering reliable solutions that scale.
+
+%-----------EXPERIENCE-----------
+\section*{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Morphotonics B.V.}{Jan 2022 -- Present}
+    {Software Engineer}{Veldhoven, NL}
+    \resumeItemListStart
+      \resumeItem{Developed an OPC UA-based system for hardware communication and control.}
+      \resumeItem{Created simulation tools to enable testing without physical hardware.}
+      \resumeItem{Designed diagnostic dashboards with Blazor-ApexCharts to analyze hardware module performance after production cycles.}
+      \resumeItem{Built an intuitive recipe editor to simplify machine setup for operators.}
+      \resumeItem{Implemented a secure internal tool for remote deployments, reducing manual workload.}
+      \resumeItem{Configured and maintained Ubuntu servers for production systems.}
+      \resumeItem{Automated testing and deployment using Azure DevOps CI/CD pipelines.}
+      \resumeItem{Collaborated with engineers and stakeholders to define features and support system rollout.}
+      \resumeItem{\textbf{Technologies:} C\#, .NET 8, Blazor, OPC UA, MongoDB, MudBlazor, CI/CD, Ubuntu}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Smit Thermal Solutions B.V.}{Jul 2021 -- Dec 2021}
+    {Junior Software Engineer}{Eindhoven, NL}
+    \resumeItemListStart
+      \resumeItem{Gathered system requirements and created UML diagrams to generate PLC code using Cordis Suite.}
+      \resumeItem{Wrote and tested structured text code for B\&R PLC systems.}
+      \resumeItem{Supported testing and commissioning by fixing bugs and adjusting control logic.}
+      \resumeItem{\textbf{Technologies:} UML, Cordis Suite, Beckhoff PLC, B\&R PLC}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {8vance}{Sep 2020 -- Feb 2021}
+    {Graduation Intern}{Venlo, NL}
+    \resumeItemListStart
+      \resumeItem{Built a web interface to demonstrate a deep learning model that detects emotions in facial expressions.}
+      \resumeItem{\textbf{Technologies:} Python, Django, OpenCV}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section*{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Fontys University of Applied Sciences}{Feb 2017 -- Feb 2021}
+    {Bachelor of ICT \& Software Engineering}{The Netherlands}
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section*{Skills}
+\resumeSubHeadingListStart
+  \resumeSubItem{\textbf{Programming Languages:} C\#}
+  \resumeSubItem{\textbf{Frameworks:} .NET 8, Blazor, MudBlazor}
+  \resumeSubItem{\textbf{Tools:} Git, Azure DevOps, Azure Pipelines}
+  \resumeSubItem{\textbf{Environments:} Ubuntu Server}
+  \resumeSubItem{\textbf{Databases:} MongoDB, SQL Server, MySQL, SQLite}
+  \resumeSubItem{\textbf{Core Skills:} Teamwork, Communication, Problem Solving, Adaptability}
+\resumeSubHeadingListEnd
+
+%-----------ADDITIONAL-----------
+\section*{Additional Information}
+\resumeSubHeadingListStart
+  \resumeSubItem{\textbf{Languages:} English (Fluent), Dutch (A2), Vietnamese (Native)}
+  \resumeSubItem{\textbf{Work Authorization:} Long-term EU residence permit}
+\resumeSubHeadingListEnd
+
+\end{document}
