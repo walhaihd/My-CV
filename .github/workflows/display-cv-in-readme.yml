@@ -47,7 +47,6 @@ jobs:
         done
 
     - name: Commit new README (if changed)
-      if: steps.main.outputs.OUTPUT == 1
       run: |
         git add README.md
         git config --local user.email "action@github.com"
