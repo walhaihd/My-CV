@@ -28,7 +28,7 @@ jobs:
 
     - name: Generate image
       run: |
-        pdftoppm "${{ github.workspace }}/$RESUME_FILE_PDF" "${{ github.workspace }}/$RESUME_FILE_PNG_NAME" -png -r 300
+        pdftoppm "${{ github.workspace }}/$RESUME_FILE_PDF" "${{ github.workspace }}/images/$RESUME_FILE_PNG_NAME" -png -r 300
 
     - name: Commit and push resume
       run: |
@@ -37,3 +37,25 @@ jobs:
             git add *.pdf *.png
             git commit -m "Update generated resume" || echo "No changes to commit"
             git push
+
+    - name: Update Readme
+      run: |
+        sed '$d' README.md
+        echo $'\n' >> .README.temp
+        for filename in *.png; do \
+          echo '![image](https://github.com/'$GITHUB_REPOSITORY'/images/'$filename'?raw=true)' >> .README.temp;  \
+        done
+        rm README.md || (exit 0)
+        mv .README.temp README.md
+        OUTPUT=0
+        git diff --exit-code README.md || OUTPUT=$?
+        echo "::set-output name=OUTPUT::$OUTPUT"
+
+    - name: Commit new README (if changed)
+      if: steps.main.outputs.OUTPUT == 1
+      run: |
+        git add README.md
+        git config --local user.email "action@github.com"
+        git config --local user.name "GithubActions"
+        git commit -m "Updated Readme" -a
+        git push
