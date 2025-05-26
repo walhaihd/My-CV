@@ -45,10 +45,11 @@ jobs:
         for filename in ${{ github.workspace }}/images/*.png; do
           echo '![image](https://github.com/'$GITHUB_REPOSITORY'/images/'$(basename $filename)'?raw=true)'
         done
+        echo '</details>'
 
     - name: Commit new README (if changed)
       run: |
-        git add README.md
+        git add *
         git config --local user.email "action@github.com"
         git config --local user.name "GithubActions"
         git commit -m "Updated Readme" -a
