@@ -28,6 +28,7 @@ jobs:
 
     - name: Generate image
       run: |
+        rm *.png
         pdftoppm "${{ github.workspace }}/$RESUME_FILE_PDF" "${{ github.workspace }}/images/$RESUME_FILE_PNG_NAME" -png -r 300
 
     - name: Commit and push resume
