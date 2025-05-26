@@ -42,15 +42,9 @@ jobs:
     - name: Update Readme
       run: |
         sed '$d' README.md
-        echo $'\n' >> .README.temp
-        for filename in ${{ github.workspace }}/images/*.png; do \
-          echo '![image](https://github.com/'$GITHUB_REPOSITORY'/images/'$filename'?raw=true)' >> .README.temp;  \
+        for filename in ${{ github.workspace }}/images/*.png; do
+          echo '![image](https://github.com/'$GITHUB_REPOSITORY'/images/'$(basename $filename)'?raw=true)'
         done
-        rm README.md || (exit 0)
-        mv .README.temp README.md
-        OUTPUT=0
-        git diff --exit-code README.md || OUTPUT=$?
-        echo "{name}={value}" >> $GITHUB_OUTPUT
 
     - name: Commit new README (if changed)
       if: steps.main.outputs.OUTPUT == 1
