@@ -5,13 +5,14 @@ on:
     branches: [ "main" ]
 
 env:
-  RESUME_FILE: resume.tex
-
+  RESUME_FILE_LATEX: resume.tex
+  RESUME_FILE_PDF: resume.pdf
+  RESUME_FILE_PNG_NAME: resume
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
 
@@ -23,12 +24,16 @@ jobs:
 
     - name: Generate resume
       run: |
-        pdflatex "${{ github.workspace }}/$RESUME_FILE" -output-format="pdf" -output-directory="${{ github.workspace }}"
+        pdflatex "${{ github.workspace }}/$RESUME_FILE_LATEX" -output-format="pdf" -output-directory="${{ github.workspace }}"
+
+    - name: Generate image
+      run: |
+        pdftoppm "${{ github.workspace }}/$RESUME_FILE_PDF" "${{ github.workspace }}/$RESUME_FILE_PNG_NAME" -png -r 300
 
     - name: Commit and push resume
       run: |
             git config --global user.name 'GitHub Actions'
             git config --global user.email 'actions@github.com'
-            git add *.pdf
+            git add *.pdf *.png
             git commit -m "Update generated resume" || echo "No changes to commit"
             git push
