@@ -36,21 +36,5 @@ jobs:
             git config --global user.name 'GitHub Actions'
             git config --global user.email 'actions@github.com'
             git add *.pdf *.png
-            git commit -m "Update generated resume" || echo "No changes to commit"
+            git commit -m "Update generated resume"
             git push
-
-    - name: Update Readme
-      run: |
-        sed '$d' README.md
-        for filename in ${{ github.workspace }}/images/*.png; do
-          echo '![image](https://github.com/'$GITHUB_REPOSITORY'/images/'$(basename $filename)'?raw=true)'
-        done
-        echo '</details>'
-
-    - name: Commit new README (if changed)
-      run: |
-        git add *
-        git config --local user.email "action@github.com"
-        git config --local user.name "GithubActions"
-        git commit -m "Updated Readme" -a
-        git push

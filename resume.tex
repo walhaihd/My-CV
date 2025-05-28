@@ -1,44 +1,43 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage{fontawesome}
+\usepackage{fontawesome5}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[default]{lato}
-\usepackage[none]{hyphenat}
-\setlength{\footskip}{3.60004pt}
+\usepackage{xcolor}
 
+% Page formatting
 \pagestyle{fancy}
-\fancyhf{} % Clear header/footer
+\fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{12pt}
 
-\definecolor{darkblue}{rgb}{0.1, 0.1, 0.5}
+% Colors
+\definecolor{primarycolor}{rgb}{0.1, 0.1, 0.5}
 
-\titleformat{\section}{\color{darkblue}\normalfont\large\bfseries\uppercase}{\thesection}{1em}{}
-\titlespacing{\section}{0pt}{1.2em}{0.6em}
+% Section formatting
+\titleformat{\section}{\color{primarycolor}\normalfont\Large\bfseries\uppercase}{\thesection}{1em}{}
+\titlespacing{\section}{0pt}{2em}{0.8em}
 
+% Custom commands for consistent formatting
 \newcommand{\resumeItem}[1]{\item\small{#1}}
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{#3} & \textit{#4} \\
-    \end{tabular*}\vspace{-4pt}
+  \vspace{1pt}\item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabular*}\vspace{-6pt}
 }
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-5pt}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-\sloppy
 
 \begin{document}
 
@@ -54,7 +53,7 @@
 
 %-----------PROFILE-----------
 \section*{Profile}
-Versatile software engineer with practical experience in building robust, user-friendly applications. Strong background in C\# and .NET, with a focus on clean code, automation, and real-world problem solving. Quick to learn, proactive in teams, and committed to delivering reliable solutions that scale.
+Versatile software engineer with over 4 years of experience building robust, scalable applications using C\# and .NET. Rapid learner with a strong ability to analyze and resolve complex problems efficiently. Recognized for delivering intuitive tools that enhance productivity and reliability in dynamic, technology-driven environments.
 
 %-----------EXPERIENCE-----------
 \section*{Experience}
@@ -66,8 +65,8 @@ Versatile software engineer with practical experience in building robust, user-f
     \resumeItemListStart
       \resumeItem{Developed an OPC UA-based system for hardware communication and control.}
       \resumeItem{Created simulation tools to enable testing without physical hardware.}
-      \resumeItem{Designed diagnostic dashboards with Blazor-ApexCharts to analyze hardware module performance after production cycles.}
-      \resumeItem{Built an intuitive recipe editor to simplify machine setup for operators.}
+      \resumeItem{Designed and implemented dashboards for real-time monitoring and data visualization.}
+      \resumeItem{Created user-friendly interfaces to simplify complex machine configurations.}
       \resumeItem{Implemented a secure internal tool for remote deployments, reducing manual workload.}
       \resumeItem{Configured and maintained Ubuntu servers for production systems.}
       \resumeItem{Automated testing and deployment using Azure DevOps CI/CD pipelines.}
@@ -106,12 +105,11 @@ Versatile software engineer with practical experience in building robust, user-f
 %-----------SKILLS-----------
 \section*{Skills}
 \resumeSubHeadingListStart
-  \resumeSubItem{\textbf{Programming Languages:} C\#, Java, Python}
-  \resumeSubItem{\textbf{Frameworks:} .NET 8, Blazor, MudBlazor}
-  \resumeSubItem{\textbf{Tools:} Git, Azure DevOps, Azure Pipelines}
-  \resumeSubItem{\textbf{Environments:} Ubuntu Server}
-  \resumeSubItem{\textbf{Databases:} MongoDB, SQL Server, MySQL, SQLite}
-  \resumeSubItem{\textbf{Core Skills:} Teamwork, Communication, Problem Solving, Adaptability}
+  \resumeSubItem{\textbf{Programming Languages:} C\#, Java, Python, SQL}
+  \resumeSubItem{\textbf{Frameworks \& Libraries:} .NET 8, Blazor, MudBlazor, Django}
+  \resumeSubItem{\textbf{Tools \& Platforms:} Git, Azure DevOps, Azure Pipelines, Linux}
+  \resumeSubItem{\textbf{Databases:} MongoDB, SQLite}
+  \resumeSubItem{\textbf{Principles \& Practices:} SOLID, Test-Driven Development (TDD)}
 \resumeSubHeadingListEnd
 
 %-----------ADDITIONAL-----------
